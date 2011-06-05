@@ -49,9 +49,9 @@ OSMBase.Attribution = function(map) {
   var style = el.style;
   style.display = 'none';
   style.fontFamily = 'sans-serif';
-  style.fontSize = '12px';
+  style.fontSize = '11px';
 
-  el.innerHTML = '&copy; OpenStreetMap contributors, CC-BY-SA'
+  el.innerHTML = 'Map data &copy; OpenStreetMap contributors, CC-BY-SA'
 
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(el);
 
