@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<title>OSM Base Map</title>
+<style type="text/css">
+  html, body, #map {
+    width: 100%; height: 100%; margin: 0; padding: 0;
+  }
+</style>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="osm.js"></script>
+<script type="text/javascript">
+  function initialize() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: new google.maps.LatLng(-34.397, 150.644),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControlOptions: {
+      }
+    });
+
+    new OSMBase.Attribution(map);
+
+    map.mapTypes.set('osm', new OSMBase());
+    map.setMapTypeId('osm');
+
+    var mapTypeIds = ['osm'];
+    for (var name in google.maps.MapTypeId) {
+      var id = google.maps.MapTypeId[name];
+      if (id.indexOf('_') == -1) {
+        mapTypeIds.push(id);
+      }
+    }
+    map.setOptions({
+      mapTypeControlOptions: {
+        mapTypeIds: mapTypeIds
+      }
+    });
+  }
+</script>
+</head>
+<body onload="initialize()">
+  <div id="map"></div>
+</body>
+</html>
