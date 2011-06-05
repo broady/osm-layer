@@ -1,6 +1,6 @@
 <style>body { font-family: sans-serif }</style>
 
-<h3><em>A base layer using OSM tiles.</em></h3>
+<h3><em>A base layer for Google Maps API using OSM tiles.</em></h3>
  
 <p>Tiles graciously provided by OSM (tile.openstreetmap.org)</p>
  
@@ -8,6 +8,11 @@
 <a href="http://wiki.openstreetmap.org/wiki/Tile_usage_policy">Tile usage policy</a>
 <a href="http://wiki.openstreetmap.org/wiki/Legal_FAQ#I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.3F">How to provide attribution</a>
 </p>
+
+<p>Usage:</p>
+<pre>
+map.mapTypes.set('osm', new OSMBase());
+</pre>
  
 <p>You can do this by creating a new OSMBase.Attribution like this:</p>
 <pre>
