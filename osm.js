@@ -51,7 +51,9 @@ OSMBase.Attribution = function(map) {
   style.fontFamily = 'sans-serif';
   style.fontSize = '11px';
 
-  el.innerHTML = 'Map data &copy; <a href="http://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+  el.innerHTML = 'Map data &copy; <a href="http://www.openstreetmap.org/">' +
+      'OpenStreetMap</a> contributors, <a href="http://creativecommons.org/' +
+      'licenses/by-sa/2.0/">CC-BY-SA</a>'
 
   map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(el);
 
